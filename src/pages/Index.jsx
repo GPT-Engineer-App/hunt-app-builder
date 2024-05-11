@@ -21,12 +21,14 @@ const Index = () => {
       <VStack spacing={8}>
         {products.map(product => (
           <Flex key={product.id} p={5} shadow="md" borderWidth="1px" borderRadius="lg" width="full" justifyContent="space-between" alignItems="center">
-            <IconButton icon={<FaArrowUp />} aria-label="Upvote" size="lg" />
+            <Flex alignItems="center">
+              <IconButton icon={<FaArrowUp />} aria-label="Upvote" size="lg" />
+              <Text fontSize="2xl" ml={2}>{product.votes}</Text>
+            </Flex>
             <Box>
               <Heading as="h3" size="md">{product.title}</Heading>
               <Text mt={2}>{product.description}</Text>
             </Box>
-            <Text fontSize="2xl">{product.votes}</Text>
           </Flex>
         ))}
       </VStack>
